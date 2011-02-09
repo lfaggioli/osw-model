@@ -136,6 +136,11 @@ public abstract class ActivityDomReader {
 		return DomHelper.getElementAttribute(element, "id");
 
 	}
+	
+	public String readIdFromNode(Element element){
+		String node= DomHelper.getElementAttribute(element, "node");
+		return readParentId(node);
+	}
 
 	protected ActivityActor readActor(Element element) {
 		ActivityActor actor = factory.actor();
